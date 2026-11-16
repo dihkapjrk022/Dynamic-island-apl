@@ -25,7 +25,7 @@
         <!-- Service untuk menjalankan widget Dynamic Island di latar belakang -->
         <service
             android:name=".DynamicIslandService"
-            android:exported="true"
+            android:exported="false"
             android:foregroundServiceType="specialUse" />
 
     </application>
