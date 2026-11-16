@@ -2,11 +2,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Izin overlay agar bisa melayang di atas aplikasi lain -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- Izin foreground service -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
-        <!-- MainActivity sebagai halaman utama -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,7 +23,6 @@
 
         </activity>
 
-        <!-- Service Dynamic Island -->
         <service
             android:name=".DynamicIslandService"
             android:exported="false"
