@@ -1,3 +1,4 @@
+
 pluginManagement {
     repositories {
         google()
@@ -14,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Dynamic Island"
+rootProject.name = "Dynamic-island-apl"
 include ':app'
