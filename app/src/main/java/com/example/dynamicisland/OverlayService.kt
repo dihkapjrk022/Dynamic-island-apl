@@ -79,7 +79,11 @@ class OverlayService : Service() {
             addAction(Intent.ACTION_BATTERY_CHANGED)
         }
         if (Build.VERSION.SDK_INT >= 33) {
-            registerReceiver(receiver, filter, RECEIVER_NOT_EXPORTED)
+            registerReceiver(
+    receiver,
+    filter,
+    android.content.Context.RECEIVER_NOT_EXPORTED
+)
         } else {
             @Suppress("DEPRECATION")
             registerReceiver(receiver, filter)
