@@ -1,30 +1,42 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Izin overlay agar bisa melayang di atas aplikasi lain -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <!-- Izin foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:label="Dynamic Island"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
-        <!-- MainActivity sebagai halaman utama aplikasi yang memiliki ikon -->
+        <!-- MainActivity sebagai halaman utama -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <!-- Service untuk menjalankan widget Dynamic Island di latar belakang -->
+        <!-- Service Dynamic Island -->
         <service
             android:name=".DynamicIslandService"
             android:exported="false"
-            android:foregroundServiceType="specialUse" />
+            android:foregroundServiceType="specialUse">
+
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Dynamic Island overlay service" />
+
+        </service>
 
     </application>
 
